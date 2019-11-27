@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white">
+
+        <ImageView
+            android:id="@+id/movie_detail_poster"
+            android:layout_width="150dp"
+            android:layout_height="210dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:contentDescription="@null"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/movie_rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_star"
+            android:drawablePadding="4dp"
+            android:textColor="@android:color/white"
+            app:layout_constraintStart_toStartOf="@+id/movie_detail_poster"
+            app:layout_constraintTop_toTopOf="@+id/movie_detail_poster" />
+
+        <TextView
+            android:id="@+id/movie_additional_data"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="4dp"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="@+id/movie_detail_poster"
+            app:layout_constraintStart_toStartOf="@+id/movie_detail_poster"
+            app:layout_constraintTop_toBottomOf="@+id/movie_detail_poster" />
+
+        <TextView
+            android:id="@+id/movie_detail_overview"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:gravity="center"
+            android:padding="4dp"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="@+id/movie_additional_data"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/movie_detail_poster"
+            app:layout_constraintTop_toTopOf="@+id/movie_detail_poster" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/movie_cast"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layout_constraintEnd_toEndOf="@+id/movie_detail_overview"
+            app:layout_constraintStart_toStartOf="@+id/movie_detail_poster"
+            app:layout_constraintTop_toBottomOf="@+id/movie_additional_data"
+            app:spanCount="2" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
